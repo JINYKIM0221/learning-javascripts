@@ -36,8 +36,7 @@ console.log(yyes);
 
 const yes = null;
 //something이라는 것이 있지만 값이 주어지지 않아서 undefined된다
-let something
-console.log(yes,somthing);
+
 
 
 //5.Arrays = []
@@ -62,7 +61,7 @@ days.push();
 
 const to = ["A","B","c"];
 to.push("D");
-to = ["A","B","C","D"];
+
 
 
 //6.Objects = {}
@@ -79,4 +78,97 @@ console.log(player.name);
 player.yyyes ="OK";
 //만약 숫자를 더하고 싶다면
 player.points = player.points + 15;
+
+//7 Functions
+function hello(){
+    console.log("hello! C");
+}
+
+hello("youki");
+//어떻게 hello괄호안에 있는 것을 넣을 수 있을까 데이터를 function에 넣는 법
+// function hello()안에 변수를 넣고 console.log()안에 넣는다
+//한개뿐만아니라 여러개 넣을 수 있다
+function hello(smooth, age){
+    console.log(smooth);
+}
+
+hello("youki", 15);
+// 문장으로 만드는 법 : +로 연결
+function hello(smooth, age){
+    console.log("hey!" + smooth + age);
+}
+
+hello("youki", 15);
+
+function plus(a,b){
+    console.log(a + b);
+}
+
+plus(10,11);// 이 plust는 function에서 a = 10 , b = 11로 받아들이고 더한다
+plus(12,12)// 이 plust는 function에서 a = 12 , b = 12로 받아들이고 더한다
+
+function divide(a,b){
+    console.log(a / b);
+}
+divide(100,52);
+// function에 사용된 a,b는 저 안에서만 작동한다
+
+
+//player라는 변수를 설정하고 그 안에 name이라는 이름 변수와 sayhello라는 function을 만들었다
+//player.sayhello는 player안에 sayhello라는 function을 쓸 수 있게 한다
+const player2 = {
+    name: "youka",
+    sayhello:function(otherPersonName){
+        console.log("hello" + otherPersonName + " zz");
+
+    },
+};
+
+player2.sayhello("sss");
+player2.sayhello("aaa")
+
+const CL = {
+    plus : function(a,b){
+        console.log(a + b);},
+    minus : function(a,b){
+        console.log(a - b);
+    }
+
+
+    
+};
+
+CL.plus(5,1);
+CL.minus(8,1);
+//8.returns
+const age = 97;//age 에 97저장
+function CL2(ageofforeigner){
+   return ageofforeigner + 2;
+}
+// CL2라는 function을 만들어서 ()안에 아무거나 들어갈 수 있게함
+
+const GA = CL2(age);
+//GA라는 변수에 CL2 펑션을 넣음
+console.log(GA);
+//console로 GA를나오게함
+
+//9 Conditionals
+const age2 = parseInt(prompt("How old are you"));//prompt 는 빈 공간에 글같은 것을 넣을 수 있게함
+
+//타입을 바꾸는 법 : parseInt()
+
+
+console.log(typeof "15",parseInt("14"));
+
+//if문
+if(isNaN(age2)){
+    console.log("please put a number here");//else if : if가 false이면 한가지 조건을 더 사용하게해줌
+} else if(age2 < 18){
+    console.log("you are too young");
+   
+} else if(age2 >= 18 && age2 <= 50) {
+    console.log("you can also drink");// && = and, || = or
+} else{
+    console.log("you can't drink"); //else가 작동되기 위해서는 if와 elseif모두 false여야 한다
+}
 
